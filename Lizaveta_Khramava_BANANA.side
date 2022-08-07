@@ -1,0 +1,98 @@
+{
+  "id": "df7ebc34-9668-4159-97b3-7dee1941e9fc",
+  "version": "2.0",
+  "name": "TestProj1",
+  "url": "https://www.google.com/",
+  "tests": [{
+    "id": "01e757dc-3fb9-43ec-ac9c-ae66df4febab",
+    "name": "Untitled",
+    "commands": [{
+      "id": "e23213ae-b8b1-42a2-9622-f377c7899291",
+      "comment": "",
+      "command": "open",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9c4563b2-e657-4ec4-9001-7aa8fcb161e2",
+      "comment": "",
+      "command": "type",
+      "target": "name=q",
+      "targets": [],
+      "value": "Banana Song"
+    }, {
+      "id": "32103911-46d0-4e1d-a8e1-a4ac378ef0f7",
+      "comment": "",
+      "command": "click",
+      "target": "css=input[type='submit']",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8b60aa90-8d4b-4a65-95fc-e38c76a63f38",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//*[contains(@href,'youtube.com')]//h3[contains(text(), 'Despicable Me')]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9741cf36-ecc0-42f5-a3c3-c43e693b89a6",
+      "comment": "",
+      "command": "pause",
+      "target": "5000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4d08f028-1181-47cc-9881-323b6baa00be",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "xpath=//head//title[contains(text(), 'YouTube')]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "166269bd-e824-4bc6-9133-269691433ca8",
+      "comment": "",
+      "command": "storeText",
+      "target": " //div[@id='info-contents']//span[contains(@class, 'view-count')]",
+      "targets": [],
+      "value": "countValue"
+    }, {
+      "id": "e8f2d7c3-aa0e-4545-b804-460ad5d16e6c",
+      "comment": "",
+      "command": "executeScript",
+      "target": "if (${countValue}.match(/(\\d{3}|[5-9]\\d)(,| )\\d{3}(,| )\\d{3}/)) { return true; } else { return false };",
+      "targets": [],
+      "value": "resultForCountValue"
+    }, {
+      "id": "aff16807-a33d-46eb-bee7-21cffdf6a8f1",
+      "comment": "",
+      "command": "assert",
+      "target": "resultForCountValue",
+      "targets": [],
+      "value": "true"
+    }, {
+      "id": "d484995f-c664-4f0a-a80b-0ebd55afbc1b",
+      "comment": "",
+      "command": "verifyText",
+      "target": "//div[@id='info-contents']//yt-formatted-string[contains(@class, 'ytd-toggle-button-renderer')]",
+      "targets": [],
+      "value": "regexp:[0-9]{3}K"
+    }, {
+      "id": "8a9d3a80-81be-4793-8695-4aa9a16c0435",
+      "comment": "",
+      "command": "verifyText",
+      "target": " xpath= //div[@id='info-contents']//span[contains(@class, 'view-count')]",
+      "targets": [],
+      "value": "regexp:(\\d{3}|[5-9]\\d),\\d{3},\\d{3} views"
+    }]
+  }],
+  "suites": [{
+    "id": "0566b592-6400-423b-951e-ba7fb5fc6061",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["01e757dc-3fb9-43ec-ac9c-ae66df4febab"]
+  }],
+  "urls": ["https://www.google.com/"],
+  "plugins": []
+}
